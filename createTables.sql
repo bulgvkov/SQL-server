@@ -1,40 +1,40 @@
 	
 USE HR_dep;	
 
-CREATE TABLE Документ_сотрудника
+CREATE TABLE Р”РѕРєСѓРјРµРЅС‚_СЃРѕС‚СЂСѓРґРЅРёРєР°
 (
-    ID_пакета_документов INT  not null IDENTITY(1,1),
-    Номер_паспорта INT not null,
-    Номер_военного_билета INT,
-	Ученная_степень VARCHAR(50),
-	ID_сотрудника_FK INT not null,
-	PRIMARY KEY(ID_пакета_документов),
-	foreign key (ID_сотрудника_FK) references Сотрудник(ID_сотрудника)
+    ID_РїР°РєРµС‚Р°_РґРѕРєСѓРјРµРЅС‚РѕРІ int not null identity(1,1),
+    РќРѕРјРµСЂ_РїР°СЃРїРѕСЂС‚Р° int not null,
+    РќРѕРјРµСЂ_РІРѕРµРЅРЅРѕРіРѕ_Р±РёР»РµС‚Р° int,
+    РЈС‡РµРЅРЅР°СЏ_СЃС‚РµРїРµРЅСЊ varchar(50),
+    ID_СЃРѕС‚СЂСѓРґРЅРёРєР°_FK int not null,
+    primary key(ID_РїР°РєРµС‚Р°_РґРѕРєСѓРјРµРЅС‚РѕРІ),
+    foreign key(ID_СЃРѕС‚СЂСѓРґРЅРёРєР°_FK) references РЎРѕС‚СЂСѓРґРЅРёРє(ID_СЃРѕС‚СЂСѓРґРЅРёРєР°)
 );
-CREATE TABLE Должность
+CREATE TABLE Р”РѕР»Р¶РЅРѕСЃС‚СЊ
 (
-    ID_должности INT not null  IDENTITY(1,1),
-    Занимаемая_должность varchar(50) not null,
-	PRIMARY KEY(ID_должности)
+    ID_РґРѕР»Р¶РЅРѕСЃС‚Рё int not null identity(1,1),
+    Р—Р°РЅРёРјР°РµРјР°СЏ_РґРѕР»Р¶РЅРѕСЃС‚СЊ varchar(50) not null,
+    primary key(ID_РґРѕР»Р¶РЅРѕСЃС‚Рё)
 );
-CREATE TABLE Подразделение
+CREATE TABLE РџРѕРґСЂР°Р·РґРµР»РµРЅРёРµ
 (
-    ID_подразделения  INT not null IDENTITY(1,1),
-    Название_подразделения VARCHAR(255) not null,
-	PRIMARY KEY(ID_подразделения)
+    ID_РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ int not null identity(1,1),
+    РќР°Р·РІР°РЅРёРµ_РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ varchar(50) not null,
+    primary key(ID_РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ)
 );
-CREATE TABLE Сотрудник
+CREATE TABLE РЎРѕС‚СЂСѓРґРЅРёРє
 (
-	ID_сотрудника int not null IDENTITY(1,1),
-	Фамилия VARCHAR(255) not null,
-    Имя VARCHAR(255) not null,
-	Отчество VARCHAR(255),
-	Дата_рождения DATA,	
-	Пол VARCHAR(255) not null,
-	ID_должности_FK INT not null,
-	ID_подразделения_FK INT not null,
-	PRIMARY KEY(ID_сотрудника),
-	foreign key(ID_должности_FK) references Должность(ID_должности),
-	foreign key(ID_подразделения_FK) references Подразделение(ID_подразделения),
+    ID_СЃРѕС‚СЂСѓРґРЅРёРєР° int not null identity(1,1),
+    Р¤Р°РјРёР»РёСЏ varchar(50) not null,
+    РРјСЏ varchar(50) not null,
+    РћС‚С‡РµСЃС‚РІРѕ varchar(50),
+    Р”Р°С‚Р°_СЂРѕР¶РґРµРЅРёСЏ data,	
+    РџРѕР» varchar(50) not null,
+    ID_РґРѕР»Р¶РЅРѕСЃС‚Рё_FK int not null,
+    ID_РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ_FK int not null,
+    primary key(ID_СЃРѕС‚СЂСѓРґРЅРёРєР°),
+    foreign key(ID_РґРѕР»Р¶РЅРѕСЃС‚Рё_FK) references Р”РѕР»Р¶РЅРѕСЃС‚СЊ(ID_РґРѕР»Р¶РЅРѕСЃС‚Рё),
+    foreign key(ID_РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ_FK) references РџРѕРґСЂР°Р·РґРµР»РµРЅРёРµ(ID_РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЏ),
 );
 
