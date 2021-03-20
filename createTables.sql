@@ -35,6 +35,6 @@ CREATE TABLE Сотрудник
     ID_подразделения_FK int not null,
     primary key(ID_сотрудника),
     foreign key(ID_должности_FK) references Должность(ID_должности),
-    foreign key(ID_подразделения_FK) references Подразделение(ID_подразделения),
+    foreign key(ID_подразделения_FK) references Подразделение(ID_подразделения), 
 );
 
